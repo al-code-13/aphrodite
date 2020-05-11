@@ -370,6 +370,7 @@ class _ProfilePageState extends State<ProfilePage> {
                       ),
                       Container(
                         height: 400,
+                        width: double.infinity,
                         margin: EdgeInsets.all(0),
                         padding: EdgeInsets.all(0),
                         child: Column(children: [
@@ -381,14 +382,16 @@ class _ProfilePageState extends State<ProfilePage> {
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                          GridView.count(
-                            crossAxisCount: 2,
-                            crossAxisSpacing: 8,
-                            children: List.generate(
-                              talent.gallery.length,
-                              (index) {
-                                return Image.network(talent.gallery[index]);
-                              },
+                          Expanded(
+                            child: GridView.count(
+                              crossAxisCount: 2,
+                              crossAxisSpacing: 8,
+                              children: List.generate(
+                                talent.gallery.length,
+                                (index) {
+                                  return Image.network(talent.gallery[index]);
+                                },
+                              ),
                             ),
                           ),
                           Text(
@@ -399,15 +402,23 @@ class _ProfilePageState extends State<ProfilePage> {
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                          GridView.count(
-                            crossAxisCount: 2,
-                            crossAxisSpacing: 8,
-                            children: List.generate(
-                              talent.bookAndEvents.length,
-                              (index) {
-                                return Image.network(
-                                    talent.bookAndEvents[index]);
-                              },
+                          Container(
+                            color: Colors.black,
+                            height: 500,
+                            margin: EdgeInsets.all(0),
+                            padding: EdgeInsets.all(0),
+                            child: GridView.count(
+                              scrollDirection: Axis.vertical,
+                              crossAxisCount: 2,
+                              crossAxisSpacing: 8,
+                              children: List.generate(
+                                
+                                talent.bookAndEvents.length,
+                                (index) {
+                                  return Image.network(
+                                      talent.bookAndEvents[index]);
+                                },
+                              ),
                             ),
                           ),
                         ]),
