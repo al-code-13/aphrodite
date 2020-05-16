@@ -1,5 +1,6 @@
 import 'package:aphrodite/frontend/src/pages/home_page.dart';
 import 'package:aphrodite/frontend/src/pages/profile_page.dart';
+import 'package:aphrodite/frontend/src/pages/settings_page.dart';
 import 'package:flutter/material.dart';
 
 import '../src/pages/events.dart';
@@ -19,7 +20,7 @@ class MenuSide extends StatelessWidget {
               color: Colors.black,
               image: DecorationImage(
                   fit: BoxFit.fill,
-                  image: NetworkImage('htstps://italentt.com/wp-content/themes/talentos/assets/img/inner-bg.jpg')),
+                  image: NetworkImage('https://italentt.com/wp-content/themes/talentos/assets/img/inner-bg.jpg')),
             ),
           ),
           ListTile(
@@ -44,7 +45,7 @@ class MenuSide extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.settings),
             title: Text('Settings'),
-            onTap: () => {Navigator.of(context).pop()},
+            onTap: () => {Navigator.push(context, MaterialPageRoute(builder: (context)=>SettingsPage()))},
           ),
           ListTile(
             leading: Icon(Icons.exit_to_app),

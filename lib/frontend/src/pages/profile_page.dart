@@ -37,24 +37,22 @@ class _ProfilePageState extends State<ProfilePage> {
       'Televisión': 'Vídeo musical para oscar Rodriguez.'
     },
     aptitude: [
-      'Protocolo',
-      'Pasarela Ropa Interior',
-      'Pasarela Ropa Exterior',
-      'Actuación Figurante',
-      'Actuación Extra',
-      'Modelo de Body Painting',
-      'Modelo de Fotografía',
-      'Presentación de Eventos',
+      '-Pasarela Ropa Interior',
+      '-Protocolo',
+      '-Pasarela Ropa Exterior',
+      '-Actuación Figurante',
+      '-Actuación Extra',
+      '-Modelo de Body Painting',
+      '-Modelo de Fotografía',
+      '-Presentación de Eventos',
     ],
     training: [
-      'Comunicadora social y periodista (en curso) – Politécnico Gran Colombiano.',
-      'Académica martha ines – Diseño corte y confección de ropa, ∆cursos de fotografía para vestido de baño y ropa interior, ropa y de moda de alta costura, Curso de pasarla.'
+      '-Comunicadora social y periodista (en curso) – Politécnico Gran Colombiano.',
+      '-Académica martha ines  Diseño corte y confección de ropa,',
+      '-Cursos de fotografía para vestido de baño y ropa interior, ropa y de moda de alta costura, Curso de pasarla.'
     ],
     gallery: [
-      'https://i2.wp.com/italentt.com/wp-content/uploads/2017/01/Modelo-Gaby-Quiroz-2-italentt.jpeg?resize=150%2C150&ssl=1',
-      'https://i2.wp.com/italentt.com/wp-content/uploads/2017/01/Modelo-Gaby-Quiroz-3-italentt.jpeg?resize=150%2C150&ssl=1',
-      'https://i0.wp.com/italentt.com/wp-content/uploads/2017/01/Modelo-Gaby-Quiroz-4-italentt.jpeg?resize=150%2C150&ssl=1',
-      'https://i0.wp.com/italentt.com/wp-content/uploads/2017/01/Modelo-Gaby-Quiroz-5-italentt.jpeg?resize=150%2C150&ssl=1',
+      
     ],
     bookAndEvents: [
       'https://i1.wp.com/italentt.com/wp-content/uploads/2017/01/Modelo-Gaby-Quiroz-6-italentt.jpeg?resize=150%2C150&ssl=1',
@@ -69,12 +67,15 @@ class _ProfilePageState extends State<ProfilePage> {
       'https://i0.wp.com/italentt.com/wp-content/uploads/2017/01/Modelo-Gaby-Quiroz-15-italentt.jpeg?resize=150%2C150&ssl=1',
       'https://i2.wp.com/italentt.com/wp-content/uploads/2017/01/Modelo-Gaby-Quiroz-16-italentt-.jpeg?resize=150%2C150&ssl=1',
       'https://i0.wp.com/italentt.com/wp-content/uploads/2017/01/Modelo-Gaby-Quiroz-18-italentt.jpeg?resize=150%2C150&ssl=1',
+      'https://i2.wp.com/italentt.com/wp-content/uploads/2017/01/Modelo-Gaby-Quiroz-2-italentt.jpeg?resize=150%2C150&ssl=1',
+      'https://i2.wp.com/italentt.com/wp-content/uploads/2017/01/Modelo-Gaby-Quiroz-3-italentt.jpeg?resize=150%2C150&ssl=1',
+      'https://i0.wp.com/italentt.com/wp-content/uploads/2017/01/Modelo-Gaby-Quiroz-4-italentt.jpeg?resize=150%2C150&ssl=1',
+      'https://i0.wp.com/italentt.com/wp-content/uploads/2017/01/Modelo-Gaby-Quiroz-5-italentt.jpeg?resize=150%2C150&ssl=1',
     ],
   );
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    int _page = 0;
     PageController _pagina = PageController(
       initialPage: 0,
     );
@@ -85,14 +86,14 @@ class _ProfilePageState extends State<ProfilePage> {
       appBar: AppBar(
         title: Text('Settings'),
         backgroundColor: Colors.transparent,
-        actions: <Widget>[
-          IconButton(
-            icon: Icon(
-              Icons.power_input,
-            ),
-            onPressed: () {},
-          )
-        ],
+        // actions: <Widget>[
+        //   IconButton(
+        //     icon: Icon(
+        //       Icons.power_input,
+        //     ),
+        //     onPressed: () {},
+        //   )
+        // ],
       ),
       body: Stack(
         children: <Widget>[
@@ -140,7 +141,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     controller: _pagina,
                     children: <Widget>[
                       Container(
-                        padding: EdgeInsets.all(40),
+                        padding: EdgeInsets.only(top: 40, left: 20, right: 20),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisSize: MainAxisSize.max,
@@ -153,86 +154,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
-                            Text(
-                              'Informacion : ',
-                              style: TextStyle(
-                                fontSize: 16,
-                                color: Colors.orange[300],
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            Text(talent.information),
-                            Row(
-                              children: <Widget>[
-                                Text(
-                                  'Edad : ',
-                                  style: subtitle,
-                                ),
-                                Text(talent.age),
-                              ],
-                            ),
-                            Row(
-                              children: <Widget>[
-                                Text(
-                                  'Estatura : ',
-                                  style: subtitle,
-                                ),
-                                Text(talent.height)
-                              ],
-                            ),
-                            Row(
-                              children: <Widget>[
-                                Text(
-                                  'Busto : ',
-                                  style: subtitle,
-                                ),
-                                Text(talent.bust),
-                              ],
-                            ),
-                            Row(
-                              children: <Widget>[
-                                Text(
-                                  'Cintura : ',
-                                  style: subtitle,
-                                ),
-                                Text(talent.waist)
-                              ],
-                            ),
-                            Row(
-                              children: <Widget>[
-                                Text(
-                                  'Cadera : ',
-                                  style: subtitle,
-                                ),
-                                Text(talent.hip)
-                              ],
-                            ),
-                            Row(
-                              children: <Widget>[
-                                Text(
-                                  'Ciudad de residencia : ',
-                                  style: subtitle,
-                                ),
-                                Text(talent.city)
-                              ],
-                            ),
-                          ],
-                        ),
-                      ),
-                      Container(
-                        padding: EdgeInsets.all(40),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisSize: MainAxisSize.max,
-                          children: <Widget>[
-                            Text(
-                              'Modelo Gaby Quiroz',
-                              style: TextStyle(
-                                fontSize: 24,
-                                color: Colors.orange[300],
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
+                            SizedBox(height: 8),
                             Text(
                               'Experiencia : ',
                               style: TextStyle(
@@ -241,67 +163,78 @@ class _ProfilePageState extends State<ProfilePage> {
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
+                            SizedBox(height: 8),
                             Text(
-                                'La Modelo Gaby Quiroz es Diseñadora y confesionista de ropa, Estudiante de comunicación social y periodismo, Modelo profesional con experiencia en fotografía y pasarela , actuación y comerciales  . me identifico con la Puntualidad, responsabilidad, y la buena actitud ante cualquier situación.'),
+                                'La Modelo Gaby Quiroz es Diseñadora y confesionista de ropa, Estudiante de comunicación social y periodismo, Modelo profesional con experiencia en fotografía y pasarela , actuación y comerciales. Me identifico con la Puntualidad, responsabilidad, y la buena actitud ante cualquier situación.',
+                                textAlign: TextAlign.justify),
                             Row(
                               children: <Widget>[
-                                Text(
-                                  'Edad : ',
-                                  style: subtitle,
+                                Flexible(
+                                  child: ListTile(
+                                    title: Text(
+                                      "Edad",
+                                      style: subtitle,
+                                    ),
+                                    subtitle: Text(talent.age),
+                                  ),
                                 ),
-                                Text('24')
+                                Flexible(
+                                  child: ListTile(
+                                    title: Text(
+                                      'Estatura : ',
+                                      style: subtitle,
+                                    ),
+                                    subtitle: Text(talent.height),
+                                  ),
+                                ),
+                                Flexible(
+                                  child: ListTile(
+                                    title: Text(
+                                      'Busto : ',
+                                      style: subtitle,
+                                    ),
+                                    subtitle: Text(talent.bust),
+                                  ),
+                                ),
                               ],
                             ),
                             Row(
                               children: <Widget>[
-                                Text(
-                                  'Estatura : ',
-                                  style: subtitle,
+                                Flexible(
+                                  child: ListTile(
+                                    title: Text(
+                                      'Cintura : ',
+                                      style: subtitle,
+                                    ),
+                                    subtitle: Text(talent.waist),
+                                  ),
                                 ),
-                                Text('1.68')
-                              ],
-                            ),
-                            Row(
-                              children: <Widget>[
-                                Text(
-                                  'Busto : ',
-                                  style: subtitle,
+                                Flexible(
+                                  flex: 1,
+                                  child: ListTile(
+                                    title: Text(
+                                      'Cadera : ',
+                                      style: subtitle,
+                                    ),
+                                    subtitle: Text(talent.hip),
+                                  ),
                                 ),
-                                Text('86')
-                              ],
-                            ),
-                            Row(
-                              children: <Widget>[
-                                Text(
-                                  'Cintura : ',
-                                  style: subtitle,
+                                Flexible(
+                                  child: ListTile(
+                                    title: Text(
+                                      'Ciudad de residencia : ',
+                                      style: subtitle,
+                                    ),
+                                    subtitle: Text(talent.city),
+                                  ),
                                 ),
-                                Text('65')
-                              ],
-                            ),
-                            Row(
-                              children: <Widget>[
-                                Text(
-                                  'Cadera : ',
-                                  style: subtitle,
-                                ),
-                                Text('91')
-                              ],
-                            ),
-                            Row(
-                              children: <Widget>[
-                                Text(
-                                  'Ciudad de residencia : ',
-                                  style: subtitle,
-                                ),
-                                Text('Bogota villeta')
                               ],
                             ),
                           ],
                         ),
                       ),
                       Container(
-                        padding: EdgeInsets.all(40),
+                        padding: EdgeInsets.only(top: 40, left: 20, right: 20),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisSize: MainAxisSize.max,
@@ -314,6 +247,74 @@ class _ProfilePageState extends State<ProfilePage> {
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
+                            SizedBox(height: 8),
+                            Text(
+                              'Reinados: ',
+                              style: TextStyle(
+                                fontSize: 16,
+                                color: Colors.orange[300],
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            SizedBox(height: 8),
+                            Text(
+                              "-Reina de la panela reina 2015\n-Reina Nacional de los caballistas \n-Virreina Departamental de la panela y la caña.",
+                            ),
+                            SizedBox(height: 8),
+                            Text(
+                              'Modelaje: ',
+                              style: TextStyle(
+                                fontSize: 16,
+                                color: Colors.orange[300],
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            SizedBox(height: 8),
+                            Text(
+                              "Experiencia en protocolo de 3 años con diferentes marcas BTL, lanzamientos de marcas ,impulsación, acompañamiento, entrega de premios, toma de datos y publicidad de diferentes marcas. ",
+                            ),
+                            SizedBox(height: 8),
+                            Text(
+                              'Fotografía: ',
+                              style: TextStyle(
+                                fontSize: 16,
+                                color: Colors.orange[300],
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            SizedBox(height: 8),
+                            Text(
+                                "-Fotos para la marca de ropa los vestidos\n-Fotos para una cadena de hoteles villeta resort\n-Foto para marca de muebles deko modern design"),
+                            SizedBox(height: 8),
+                            Text(
+                              'Presentación: ',
+                              style: TextStyle(
+                                fontSize: 16,
+                                color: Colors.orange[300],
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            SizedBox(height: 8),
+                            Text(
+                                "-Presentadora del canal regional gualiva Señal villeta Dulce,\n-Presentadora de evento Dia nacional de la madre por cinevi.")
+                          ],
+                        ),
+                      ),
+                      Container(
+                        padding: EdgeInsets.all(40),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisSize: MainAxisSize.min,
+                          children: <Widget>[
+                            Text(
+                              'Modelo Gaby Quiroz',
+                              style: TextStyle(
+                                fontSize: 24,
+                                color: Colors.orange[300],
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            SizedBox(height: 8),
                             Text(
                               'Aptitudes : ',
                               style: TextStyle(
@@ -322,15 +323,16 @@ class _ProfilePageState extends State<ProfilePage> {
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
-                            Container(
-                              height: 400,
+                            SizedBox(height: 8),
+                            Flexible(
                               child: ListView.builder(
+                                  padding: EdgeInsets.all(0),
                                   itemCount: talent.aptitude.length,
                                   itemBuilder:
                                       (BuildContext context, int index) {
                                     return Text(talent.aptitude[index]);
                                   }),
-                            )
+                            ),
                           ],
                         ),
                       ),
@@ -356,9 +358,11 @@ class _ProfilePageState extends State<ProfilePage> {
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
+                            SizedBox(height: 8),
                             Container(
                               height: 400,
                               child: ListView.builder(
+                                  padding: EdgeInsets.all(0),
                                   itemCount: talent.training.length,
                                   itemBuilder:
                                       (BuildContext context, int index) {
@@ -371,57 +375,60 @@ class _ProfilePageState extends State<ProfilePage> {
                       Container(
                         height: 400,
                         width: double.infinity,
-                        margin: EdgeInsets.all(0),
-                        padding: EdgeInsets.all(0),
-                        child: Column(children: [
-                          Text(
-                            'Galeria : ',
-                            style: TextStyle(
-                              fontSize: 16,
-                              color: Colors.orange[300],
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          Expanded(
-                            child: GridView.count(
-                              crossAxisCount: 2,
-                              crossAxisSpacing: 8,
-                              children: List.generate(
-                                talent.gallery.length,
-                                (index) {
-                                  return Image.network(talent.gallery[index]);
-                                },
+                        padding: EdgeInsets.only(top:50,left: 20,right: 20),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Galeria : ',
+                               style: TextStyle(
+                                fontSize: 24,
+                                color: Colors.orange[300],
+                                fontWeight: FontWeight.bold,
                               ),
                             ),
-                          ),
-                          Text(
-                            'Book y eventos : ',
-                            style: TextStyle(
-                              fontSize: 16,
-                              color: Colors.orange[300],
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          Container(
-                            color: Colors.black,
-                            height: 500,
-                            margin: EdgeInsets.all(0),
-                            padding: EdgeInsets.all(0),
-                            child: GridView.count(
-                              scrollDirection: Axis.vertical,
-                              crossAxisCount: 2,
-                              crossAxisSpacing: 8,
-                              children: List.generate(
-                                
-                                talent.bookAndEvents.length,
-                                (index) {
-                                  return Image.network(
-                                      talent.bookAndEvents[index]);
-                                },
+                            Expanded(
+                              child: GridView.count(
+                                padding: EdgeInsets.all(0),
+                                crossAxisCount: 2,
+                                crossAxisSpacing: 8,
+                                children: List.generate(
+                                  
+                                  talent.bookAndEvents.length,
+                                  (index) {
+                                    return Image.network(talent.bookAndEvents[index]);
+                                  },
+                                ),
                               ),
                             ),
-                          ),
-                        ]),
+                            // Text(
+                            //   'Book y eventos : ',
+                            //   style: TextStyle(
+                            //     fontSize: 16,
+                            //     color: Colors.orange[300],
+                            //     fontWeight: FontWeight.bold,
+                            //   ),
+                            // ),
+                            // Container(
+                            //   color: Colors.black,
+                            //   height: 500,
+                            //   margin: EdgeInsets.all(0),
+                            //   padding: EdgeInsets.all(0),
+                            //   child: GridView.count(
+                            //     scrollDirection: Axis.vertical,
+                            //     crossAxisCount: 2,
+                            //     crossAxisSpacing: 8,
+                            //     children: List.generate(
+                            //       talent.bookAndEvents.length,
+                            //       (index) {
+                            //         return Image.network(
+                            //             talent.bookAndEvents[index]);
+                            //       },
+                            //     ),
+                            //   ),
+                            // ),
+                          ],
+                        ),
                       ),
                     ],
                   ),
@@ -444,11 +451,11 @@ class _ProfilePageState extends State<ProfilePage> {
         key: _bottomNavigationKey,
         backgroundColor: Colors.pink,
         items: <Widget>[
-          Icon(Icons.add, size: 30),
-          Icon(Icons.list, size: 30),
-          Icon(Icons.compare_arrows, size: 30),
-          Icon(Icons.compare_arrows, size: 30),
-          Icon(Icons.compare_arrows, size: 30),
+          Icon(Icons.info, size: 30,color: Colors.black54,),
+          Icon(Icons.assessment, size: 30,color: Colors.black54,),
+          Icon(Icons.lightbulb_outline, size: 30,color: Colors.black54,),
+          Icon(Icons.school, size: 30,color: Colors.black54,),
+          Icon(Icons.camera_enhance, size: 30,color: Colors.black54,),
         ],
         onTap: (index) {
           _pagina.jumpToPage(index);
